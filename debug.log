@@ -1,0 +1,10 @@
+[0420/190234.900:ERROR:process_reader_win.cc(123)] NtOpenThread: Spécification d’un ID de client non valide. (0xc000000b)
+[0420/190402.362:ERROR:process_info.cc(620)] range at 0x28a27fc000, size 0x4000 partially unreadable
+[0420/190543.061:ERROR:process_reader_win.cc(242)] ReadMemory at 0x848cdfe000 of 8192 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0420/190543.584:ERROR:crash_report_exception_handler.cc(116)] WriteEverything failed
+[0421/221959.031:ERROR:process_reader_win.cc(242)] ReadMemory at 0x289fb9c000 of 6024 bytes failed: Seule une partie d’une requête ReadProcessMemory ou WriteProcessMemory a été effectuée. (0x12B)
+[0421/225543.831:ERROR:exception_handler_server.cc(526)] ConnectNamedPipe: Le canal de communication est sur le point d’être fermé. (0xE8)
+[0424/095927.997:ERROR:exception_handler_server.cc(526)] ConnectNamedPipe: Le canal de communication est sur le point d’être fermé. (0xE8)
+[0511/183507.701:ERROR:crash_report_database_win.cc(568)] CreateDirectory C:\Users\Zohra\AppData\Local\Temp\scoped_dir11516_14328\Crashpad: Espace insuffisant sur le disque. (0x70)
+[0511/183507.732:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Le canal de communication a été fermé. (0x6D)
+[0511/183507.732:ERROR:crash_report_database_win.cc(568)] CreateDirectory C:\Users\Zohra\AppData\Local\Temp\scoped_dir11516_14328\Crashpad: Espace insuffisant sur le disque. (0x70)
