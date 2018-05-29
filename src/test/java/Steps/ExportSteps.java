@@ -18,11 +18,12 @@ public class ExportSteps extends BaseUtil {
     }
 
     @And("^je clique sur la rubrique Export de la zone latérale Outils$")
-    public void jeCliqueSurLaRubriqueExportDeLaZoneLatéraleOutils() throws Throwable {
+    public void jeCliqueSurLaRubriqueExportDeLaZoneLateraleOutils() throws Throwable {
         Thread.sleep(5000);
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
         base.Driver.findElement(By.xpath("//a[contains(@title,'Export')]")).click();
         Thread.sleep(3000);
+        return;
     }
 
     @And("^j'ai saisi le nom de paquetage$")
@@ -30,11 +31,11 @@ public class ExportSteps extends BaseUtil {
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-package-name")).sendKeys("testtst");
         //Thread.sleep(5000);
         base.Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
+        return;
     }
 
     @And("^j'ai choisi l'espace à exporter$")
-    public void jAiChoisiLEspaceÀExporter() throws Throwable {
+    public void jAiChoisiLEspaceAExporter() throws Throwable {
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-selectSource-button-button")).click();
 
         //  base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-selectSource-title"));
@@ -46,8 +47,7 @@ public class ExportSteps extends BaseUtil {
         //Thread.sleep(3000);
         base.Driver.findElement(By.xpath("//span[contains(text(),'cours')]")).click();
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-selectSource-ok-button")).click();
-
-
+        return;
     }
 
     @And("^j'ai choisi l'esapce de destination$")
@@ -62,13 +62,14 @@ public class ExportSteps extends BaseUtil {
         base.Driver.findElement(By.xpath("//span[contains(text(),'test')]")).click();
         Thread.sleep(2000);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-selectDestination-ok-button")).click();
+        return;
     }
 
     @And("^je clique sur le bouton Exporter$")
     public void jeCliqueSurLeBoutonExporter() throws Throwable {
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-export-button-button")).click();
         base.Driver.switchTo().defaultContent();
-
+        return;
     }
 
     @And("^je quitte espace export$")
@@ -76,13 +77,14 @@ public class ExportSteps extends BaseUtil {
         //base.Driver.findElement(By.xpath("//a[contains(@title,'MON TABLEAU DE BORD')]")).click();
         // base.Driver.findElement(By.xpath("//a[contains(text(),'MON TABLEAU DE BORD')]")).click();
         //Thread.sleep(2000);
+        return;
 
     }
 
     @And("^je consulte l'espace bibliothèque de documents$")
-    public void jeConsulteLEspaceBibliothèqueDeDocuments() throws Throwable {
+    public void jeConsulteLEspaceBibliothequeDeDocuments() throws Throwable {
         base.Driver.navigate().to("http://127.0.0.1:8080/share/page/site/averroes/documentlibrary");
-
+        return;
     }
 
     @And("^je consulte le dossier test$")
@@ -90,12 +92,14 @@ public class ExportSteps extends BaseUtil {
         Thread.sleep(5000);
         base.Driver.findElement(By.xpath("//span[contains(text(),'filtest')]")).click();
         Thread.sleep(8000);
+        return;
     }
 
 
     @Then("^je dois trouver un fichier du type acp$")
     public void jeDoisTrouverUnFichierDuTypeAcp() throws Throwable {
         base.Driver.findElement(By.xpath("//a[contains(text(),'testtst.acp')]")).isDisplayed();
+        return;
 
     }
 
@@ -112,7 +116,7 @@ public class ExportSteps extends BaseUtil {
        // base.Driver.findElement(By.xpath("//*[@id=\"prompt\"]/div[2]/text()"));
         //*[@id="prompt"]/div[2]
 
-
+        return;
 
     }
 
@@ -120,6 +124,7 @@ public class ExportSteps extends BaseUtil {
     public void jAiSaisiLeNomDePaquetagee() throws Throwable {
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-package-name")).sendKeys("test");
         Thread.sleep(8000);
+        return;
     }
 
 

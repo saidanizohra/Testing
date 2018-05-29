@@ -17,17 +17,18 @@ public class GestionDeContenu extends BaseUtil {
         this.base = base;
     }
     @And("^Cliquer sur la zone latérale Eléménts supprimés de la rubrique Gestion de contenu$")
-    public void cliquerSurLaZoneLatéraleEléméntsSupprimésDeLaRubriqueGestionDeContenu() throws Throwable {
+    public void cliquerSurLaZoneLateraleElementsSupprimesDeLaRubriqueGestionDeContenu() throws Throwable {
         Thread.sleep(8000);
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
         base.Driver.findElement(By.xpath("//a[contains(text(),'Éléments supprimés')]")).click();
         Thread.sleep(8000);
+        return;
     }
 
 
 
     @And("^je survole le cursueur de la souris sur l'élément test.pdf et cliquer sur l'icône restaurer$")
-    public void jeSurvoleLeCursueurDeLaSourisSurLÉlémentTestPdfEtCliquerSurLIcôneRestaurer() throws Throwable {
+    public void jeSurvoleLeCursueurDeLaSourisSurLElementTestPdfEtCliquerSurLIconeRestaurer() throws Throwable {
         base.Driver.findElement(By.xpath("//div[text()='test.pdf']")).click();
         Thread.sleep(3000);
         Robot bot = new Robot();
@@ -35,19 +36,21 @@ public class GestionDeContenu extends BaseUtil {
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         base.Driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
+        return;
     }
 
 
     @And("^le message Récupération réussie test.pdf s'affiche$")
-    public void leMessageRécupérationRéussieTestPdfSAffiche() throws Throwable {
+    public void leMessageRecuperationReussieTestPdfSAffiche() throws Throwable {
         Thread.sleep(1000);
         base.Driver.findElement(By.xpath("//span[contains(text(),'Récupération réussie test.pdf')]"));
         //base.Driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
         //base.Driver.findElement(By.xpath("//span[contains(text()='Récupération réussie test.pdf'])")).isDisplayed();
+        return;
     }
 
     @Then("^le document test.pdf est récupéré$")
-    public void leDocumentTestPdfEstRécupéré() throws Throwable {
+    public void leDocumentTestPdfEstRecupere() throws Throwable {
         Thread.sleep(3000);
         Robot bot = new Robot();
         bot.mouseMove(1350, 500);
@@ -57,12 +60,12 @@ public class GestionDeContenu extends BaseUtil {
 
         base.Driver.findElement(By.xpath("//a[contains(text(),'test.pdf')]")).isDisplayed();
 
-
+        return;
 
     }
 
     @And("^je survole le cursueur de la souris sur un élément et cliquer sur l'icône restaurer and je clique sur l'icône Supprimer$")
-    public void jeSurvoleLeCursueurDeLaSourisSurUnÉlémentEtCliquerSurLIcôneRestaurerAndJeCliqueSurLIcôneSupprimer() throws Throwable {
+    public void jeSurvoleLeCursueurDeLaSourisSurUnElementEtCliquerSurLIconeRestaurerAndJeCliqueSurLIconeSupprimer() throws Throwable {
         base.Driver.findElement(By.xpath("//div[text()='1525080292452_logo-averroes-quickshare.png_tmp']")).click();
         Thread.sleep(3000);
         Robot bot = new Robot();
@@ -70,12 +73,13 @@ public class GestionDeContenu extends BaseUtil {
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         base.Driver.manage().timeouts().implicitlyWait(2,TimeUnit.SECONDS);
+        return;
     }
 
     @Then("^le message Suppression réussie s'affiche$")
-    public void leMessageSuppressionRéussieSAffiche() throws Throwable {
+    public void leMessageSuppressionReussieSAffiche() throws Throwable {
         Thread.sleep(1000);
         base.Driver.findElement(By.xpath("//span[contains(text(),'Suppression réussie')]"));
-
+        return;
     }
 }

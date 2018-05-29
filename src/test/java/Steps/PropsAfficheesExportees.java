@@ -13,34 +13,36 @@ import java.awt.*;
 import java.awt.event.InputEvent;
 import java.util.concurrent.TimeUnit;
 
-public class PropsAffichéesExportées extends BaseUtil {
+public class PropsAfficheesExportees extends BaseUtil {
     private BaseUtil base;
 
-    public PropsAffichéesExportées(BaseUtil base) {
+    public PropsAfficheesExportees(BaseUtil base) {
         this.base = base;
     }
     @And("^je clique sur la rubrique Propriétés affichées et exportées  de la zone lattérale Résultats de recherche$")
-    public void jeCliqueSurLaRubriquePropriétésAffichéesEtExportéesDeLaZoneLattéraleRésultatsDeRecherche() throws Throwable {
+    public void jeCliqueSurLaRubriqueProprietesAfficheesEtExporteesDeLaZoneLatteraleResultatsDeRecherche() throws Throwable {
         Thread.sleep(8000);
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
         base.Driver.findElement(By.xpath("//a[contains(text(),'Propriétés affichées et exportées')]")).click();
         Thread.sleep(8000);
+        return;
     }
 
     @And("^j'ai effectué un recherche sur un document du type choisi$")
-    public void jAiEffectuéUnRechercheSurUnDocumentDuTypeChoisi() throws Throwable {
+    public void jAiEffectueUnRechercheSurUnDocumentDuTypeChoisi() throws Throwable {
         base.Driver.switchTo().defaultContent();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("global_x002e_header_x0023_default-searchText")).sendKeys("test.csv");
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("global_x002e_header_x0023_default-searchText")).sendKeys(Keys.ENTER);
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        return;
     }
 
 
 
     @And("^j'ai fait un drag and drop pour choisir les propriétés sélectionnées$")
-    public void jAiFaitUnDragAndDropPourChoisirLesPropriétésSélectionnées() throws Throwable {
+    public void jAiFaitUnDragAndDropPourChoisirLesProprietesSelectionnees() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         WebElement elt1 = base.Driver.findElement(By.id("li2_1"));
         WebElement eltTo = base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-edit-field-dd-ul1"));
@@ -53,18 +55,19 @@ public class PropsAffichéesExportées extends BaseUtil {
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-edit-field-ok-button")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
 
-
+        return;
 
     }
 
     @Then("^les propriétés sélectionnées s'affichent$")
-    public void lesPropriétésSélectionnéesSAffichent() throws Throwable {
+    public void lesProprietesSelectionneesSAffichent() throws Throwable {
         base.Driver.findElement(By.xpath("//a[contains(text(),'Nom')]")).isDisplayed();
         base.Driver.findElement(By.xpath("//a[contains(text(),'Titre')]")).isDisplayed();
+        return;
     }
 
     @And("^je clique sur l'icône Modifier en survolant sur un type$")
-    public void jeCliqueSurLIcôneModifierEnSurvolantSurUnType() throws Throwable {
+    public void jeCliqueSurLIconeModifierEnSurvolantSurUnType() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//b[text()='Devis']")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
@@ -74,7 +77,7 @@ public class PropsAffichéesExportées extends BaseUtil {
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(5000);
-
+        return;
         //dragAndDropElement(gfhj,gfdfhdf);
     }
 
@@ -109,14 +112,15 @@ public class PropsAffichéesExportées extends BaseUtil {
     }
 
     @Then("^le message Champs mis à jour avec succès s'affiche$")
-    public void leMessageChampsMisÀJourAvecSuccèsSAffiche() throws Throwable {
+    public void leMessageChampsMisAJourAvecSuccesSAffiche() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//span[text()= 'Champs mis à jour avec succès.']")).isDisplayed();
         base.Driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+        return;
     }
 
     @And("^je clique sur l'icône Modifier en survolant sur un type contenu$")
-    public void jeCliqueSurLIcôneModifierEnSurvolantSurUnTypeContenu() throws Throwable {
+    public void jeCliqueSurLIconeModifierEnSurvolantSurUnTypeContenu() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//b[text()='Contenu']")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
@@ -126,22 +130,22 @@ public class PropsAffichéesExportées extends BaseUtil {
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(5000);
-
+        return;
     }
 
     @And("^j'ai effectué un recherche sur un document du type contenu$")
-    public void jAiEffectuéUnRechercheSurUnDocumentDuTypeContenu() throws Throwable {
+    public void jAiEffectueUnRechercheSurUnDocumentDuTypeContenu() throws Throwable {
         base.Driver.switchTo().defaultContent();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("global_x002e_header_x0023_default-searchText")).sendKeys("lien.txt");
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("global_x002e_header_x0023_default-searchText")).sendKeys(Keys.ENTER);
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-
+        return;
     }
 
     @And("^je clique sur l'icône Modifier en survolant sur un type dossier$")
-    public void jeCliqueSurLIcôneModifierEnSurvolantSurUnTypeDossier() throws Throwable {
+    public void jeCliqueSurLIconeModifierEnSurvolantSurUnTypeDossier() throws Throwable {
         Thread.sleep(3000);
         Robot bot = new Robot();
         bot.mouseMove(1310, 500);
@@ -157,17 +161,17 @@ public class PropsAffichéesExportées extends BaseUtil {
         bot1.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot1.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(5000);
-
+        return;
     }
 
     @And("^j'ai effectué un recherche sur un document du type dossier$")
-    public void jAiEffectuéUnRechercheSurUnDocumentDuTypeDossier() throws Throwable {
+    public void jAiEffectueUnRechercheSurUnDocumentDuTypeDossier() throws Throwable {
         base.Driver.switchTo().defaultContent();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("global_x002e_header_x0023_default-searchText")).sendKeys("filtest");
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("global_x002e_header_x0023_default-searchText")).sendKeys(Keys.ENTER);
         base.Driver.manage().timeouts().implicitlyWait(8,TimeUnit.SECONDS);
-
+        return;
 }
 }

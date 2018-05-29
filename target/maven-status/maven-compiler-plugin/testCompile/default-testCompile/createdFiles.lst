@@ -1,7 +1,2 @@
-Base\BaseUtil.class
-pages\LoginPgae.class
-Transformation\EmailTransform.class
-Transformation\SalaryTransform.class
-Steps\LoginStep$User.class
-Steps\LoginStep.class
-Steps\Hook.class
+Steps\PropsAfficheesExportees.class
+Steps\GestionnaireCategorie.class

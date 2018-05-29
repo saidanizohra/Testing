@@ -19,14 +19,14 @@ public class ImportStep extends BaseUtil {
         this.base = base;
     }
     @And("^je clique sur la rubrique Import de la zone latérale Outils$")
-    public void jeCliqueSurLaRubriqueImportDeLaZoneLatéraleOutils() throws Throwable {
+    public void jeCliqueSurLaRubriqueImportDeLaZoneLateraleOutils() throws Throwable {
         Thread.sleep(5000);
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
        // base.Driver.findElement(By.xpath("//[contains(@title,'Import')]")).click();
         base.Driver.findElement(By.xpath("//*[@id=\"toolLink\"]/li[2]/span/a")).click();
         base.Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         //Thread.sleep(4000);
-
+        return;
 
     }
 
@@ -40,26 +40,22 @@ public class ImportStep extends BaseUtil {
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         base.Driver.findElement(By.xpath("//span[contains(text(),'cours')]")).click();
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-selectDestination-ok-button")).click();
-
+        return;
     }
 
     @And("^je clique sur le bouton Importer dans l'entrepôt$")
-    public void jeCliqueSurLeBoutonImporterDansLEntrepôt() throws Throwable {
+    public void jeCliqueSurLeBoutonImporterDansLEntrepot() throws Throwable {
       //base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-import-button-button")).click();
      // Thread.sleep(3000);
         base.Driver.findElement(By.xpath("//*[@id=\"page_x002e_ctool_x002e_admin-console_x0023_default-upload-button-button\"]")).click();
-
+        return;
     }
 
     @And("^je clique sur le lien Sélectionner les fichiers à ajouter$")
-    public void jeCliqueSurLeLienSélectionnerLesFichiersÀAjouter() throws Throwable {
+    public void jeCliqueSurLeLienSelectionnerLesFichiersAAjouter() throws Throwable {
        // Thread.sleep(3000);
         base.Driver.findElement(By.className("dnd-file-selection-button")).click();
-        //base.Driver.findElement(By.xpath("//button[contains(text(),'contains()')]")).click();
-       // base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-upload-button-button")).click();
-
-       // Thread.sleep(4000);
-
+        return;
     }
 
     @And("^j'ai choisi un fichier du type acp$")
@@ -87,7 +83,7 @@ public class ImportStep extends BaseUtil {
         bot1.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot1.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(6000);
-
+        return;
     }
 
     @And("^je clique sur le bouton Importer$")
@@ -103,7 +99,7 @@ public class ImportStep extends BaseUtil {
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(5000);
 
-
+        return;
 
 
     }
@@ -113,7 +109,7 @@ public class ImportStep extends BaseUtil {
         base.Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//span[contains(text(),'cours')]")).click();
         base.Driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-
+        return;
     }
 
 
@@ -132,10 +128,8 @@ public class ImportStep extends BaseUtil {
         {
 
             System.out.println("Verification Failed - An incorrect file as acp is displayed ");
-
-
-
     }
+        return;
 }
 
     @And("^j'ai choisi un fichier du type zip$")
@@ -153,9 +147,7 @@ public class ImportStep extends BaseUtil {
         bot1.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot1.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(6000);
-
-
-
+        return;
     }
 
     @Then("^je dois trouver dans ce dossier un fichier du type zip$")
@@ -186,21 +178,21 @@ public class ImportStep extends BaseUtil {
     @And("^j'ai saisi un mot de recherche$")
     public void jAiSaisiUnMotDeRecherche() throws Throwable {
 
-
+        return;
     }
 
     @And("^je survole sur un utilsateur et je clique sur l'icône Supprimer$")
-    public void jeSurvoleSurUnUtilsateurEtJeCliqueSurLIcôneSupprimer() throws Throwable {
-
+    public void jeSurvoleSurUnUtilsateurEtJeCliqueSurLIconeSupprimer() throws Throwable {
+        return;
     }
 
     @And("^je confirme la suppression de l'utilsateur$")
     public void jeConfirmeLaSuppressionDeLUtilsateur() throws Throwable {
-
+        return;
     }
 
     @Then("^le message Succes de la suppressin de l'utilisateur$")
     public void leMessageSuccesDeLaSuppressinDeLUtilisateur() throws Throwable {
-
+        return;
     }
 }

@@ -12,40 +12,41 @@ import java.awt.*;
 import java.awt.event.InputEvent;
 import java.util.concurrent.TimeUnit;
 
-public class GestionnaireCatégorie extends BaseUtil {
+public class GestionnaireCategorie extends BaseUtil {
         private BaseUtil base;
 
-    public GestionnaireCatégorie(BaseUtil base) {
+    public GestionnaireCategorie(BaseUtil base) {
         this.base = base;
     }
     @And("^je clique sur la rubrique Gestionnaire de catégories de la zone lattérale Classification$")
-    public void jeCliqueSurLaRubriqueGestionnaireDeCatégoriesDeLaZoneLattéraleClassification() throws Throwable {
+    public void jeCliqueSurLaRubriqueGestionnaireDeCategoriesDeLaZoneLatteraleClassification() throws Throwable {
         //base.Driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
         Thread.sleep(8000);
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
         base.Driver.findElement(By.xpath("//a[contains(text(),'Gestionnaire de catégories')]")).click();
        Thread.sleep(8000);
-
+       return;
     }
     @And("^je clique sur l'icône Ajouter une catégorie en survolant sur Catégorie racine$")
-    public void jeCliqueSurLIcôneAjouterUneCatégorieEnSurvolantSurCatégorieRacine() throws Throwable {
+    public void jeCliqueSurLIconeAjouterUneCategorieEnSurvolantSurCategorieRacine() throws Throwable {
         base.Driver.findElement(By.id("ygtvlabelel1")).click();
         base.Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
       //  WebDriverWait wait = new WebDriverWait(base.Driver,30);
         //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"ygtvlabelel1\"]/span")));   //examining the xpath for a search
         base.Driver.findElement(By.xpath("//*[@id=\"ygtvlabelel1\"]/span")).click();
         base.Driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
-
+        return;
     }
 
     @And("^je clique sur le bouton Ok$")
     public void jeCliqueSurLeBoutonOk() throws Throwable {
         base.Driver.findElement(By.xpath("//*[@id=\"yui-gen14-button\"]")).click();
         //base.Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        return;
     }
 
     @Then("^le message Catégorie ajoutée avec succès s'affiche$")
-    public void leMessageCatégorieAjoutéeAvecSuccèsSAffiche() throws Throwable {
+    public void leMessageCategorieAjouteeAvecSuccesSAffiche() throws Throwable {
         String text2= "Catégorie ajoutée avec succès";
         String text1 =base.Driver.findElement(By.xpath("//*[@id=\"message\"]/div/span")).getText();
         base.Driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
@@ -61,27 +62,24 @@ public class GestionnaireCatégorie extends BaseUtil {
 
             System.out.println("Verification Failed - An incorrect message is displayed ");
 
-
-
         }
-
-
+        return;
     }
 
 
     @And("^j'ai saisi le nom de la catégorie$")
-    public void jAiSaisiLeNomDeLaCatégorie() throws Throwable {
+    public void jAiSaisiLeNomDeLaCategorie() throws Throwable {
         //WebDriverWait wait = new WebDriverWait(base.Driver,30);
         //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//input[contains(@id,'alf-id')]")));
         base.Driver.findElement(By.xpath("//input[contains(@id,'alf-id')]")).sendKeys("8");
         base.Driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
-
+        return;
     }
 
 
 
     @And("^je survole sur une catégorie et je clique sur l'icône Supprimer la catégorie$")
-    public void jeSurvoleSurUneCatégorieEtJeCliqueSurLIcôneSupprimerLaCatégorie() throws Throwable {
+    public void jeSurvoleSurUneCategorieEtJeCliqueSurLIconeSupprimerLaCategorie() throws Throwable {
         base.Driver.findElement(By.xpath("//span[contains(text(),'test')]")).click();
         base.Driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         //WebDriverWait wait = new WebDriverWait(base.Driver,30);
@@ -92,20 +90,19 @@ public class GestionnaireCatégorie extends BaseUtil {
         bot.mouseMove(400, 520);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-
        // base.Driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
-
+        return;
     }
 
     @And("^je clique sur le bouton Supprimer du popup de validation de suppression$")
     public void jeCliqueSurLeBoutonSupprimerDuPopupDeValidationDeSuppression() throws Throwable {
         base.Driver.findElement(By.xpath("//*[@id=\"yui-gen14-button\"]")).click();
         base.Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
+        return;
     }
 
     @Then("^le message Catégorie supprimée avec succès s'affiche$")
-    public void leMessageCatégorieSuppriméeAvecSuccèsSAffiche() throws Throwable {
+    public void leMessageCategorieSupprimeeAvecSuccesSAffiche() throws Throwable {
         String textsup1="Catégorie supprimée avec succès";
         String textsup2 =base.Driver.findElement(By.xpath("//*[@id=\"message\"]/div/span")).getText();
         base.Driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
@@ -121,15 +118,13 @@ public class GestionnaireCatégorie extends BaseUtil {
 
             System.out.println("Verification Failed - An incorrect message is displayed ");
 
-
-
         }
-
+        return;
 
     }
 
     @And("^je survole sur une catégorie et je clique sur l'icône Editer une catégorie$")
-    public void jeSurvoleSurUneCatégorieEtJeCliqueSurLIcôneEditerUneCatégorie() throws Throwable {
+    public void jeSurvoleSurUneCategorieEtJeCliqueSurLIconeEditerUneCategorie() throws Throwable {
         base.Driver.findElement(By.xpath("//span[contains(text(),'ffgg')]")).click();
         base.Driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         //WebDriverWait wait = new WebDriverWait(base.Driver,30);
@@ -142,22 +137,21 @@ public class GestionnaireCatégorie extends BaseUtil {
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 
         base.Driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
-
+        return;
 
     }
 
     @And("^je modifie le nom de la catégorie et je clique sur le bouton Enregistrer$")
-    public void jeModifieLeNomDeLaCatégorieEtJeCliqueSurLeBoutonEnregistrer() throws Throwable {
+    public void jeModifieLeNomDeLaCategorieEtJeCliqueSurLeBoutonEnregistrer() throws Throwable {
         Thread.sleep(5000);
         base.Driver.findElement(By.xpath("//input[contains(@id,'form-field-')]")).sendKeys("test1");
         base.Driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//a[contains(text(),'Enregistrer')]")).click();
-
-
+        return;
     }
 
     @Then("^le message Nom de la catégorie modifié avec succès s'affiche$")
-    public void leMessageNomDeLaCatégorieModifiéAvecSuccèsSAffiche() throws Throwable {
+    public void leMessageNomDeLaCategorieModifieAvecSuccesSAffiche() throws Throwable {
         Thread.sleep(1000);
         base.Driver.findElement(By.xpath("//span[contains(text(),'Nom de la catégorie modifié avec succès')]"));
         /*  String textMod1="Nom de la catégorie modifié avec succès";
@@ -178,17 +172,18 @@ public class GestionnaireCatégorie extends BaseUtil {
 
         }
 */
-
+        return;
     }
 
     @And("^j'ai saisi le nom de catégorie$")
-    public void jAiSaisiLeNomDeCatégorie() throws Throwable {
+    public void jAiSaisiLeNomDeCategorie() throws Throwable {
         base.Driver.findElement(By.xpath("//input[contains(@id,'alf-id')]")).sendKeys("cat");
-        base.Driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);;
+        base.Driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
+        return;
     }
 
     @And("^je survole sur une catégorie et je clique sur l'icône Ajouter une catégorie$")
-    public void jeSurvoleSurUneCatégorieEtJeCliqueSurLIcôneAjouterUneCatégorie() throws Throwable {
+    public void jeSurvoleSurUneCategorieEtJeCliqueSurLIconeAjouterUneCategorie() throws Throwable {
         base.Driver.findElement(By.xpath("//span[contains(text(),'cours')]")).click();
         base.Driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         //WebDriverWait wait = new WebDriverWait(base.Driver,30);
@@ -201,15 +196,15 @@ public class GestionnaireCatégorie extends BaseUtil {
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 
         base.Driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
-
+        return;
 
     }
 
     @And("^j'ai saisi le nom de la sous catégorie$")
-    public void jAiSaisiLeNomDeLaSousCatégorie() throws Throwable {
+    public void jAiSaisiLeNomDeLaSousCategorie() throws Throwable {
         base.Driver.findElement(By.xpath("//input[contains(@id,'alf-id')]")).sendKeys("coursBI");
         base.Driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);;
-
+        return;
     }
 
     @And("^je clique sur Ok$")
@@ -217,6 +212,8 @@ public class GestionnaireCatégorie extends BaseUtil {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//button[contains(text(),'OK')]")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-
+        return;
     }
+
+
 }

@@ -22,48 +22,46 @@ public class groupe extends BaseUtil {
         this.base = base;
     }
     @And("^je clique sur la rubrique Groupe de la zone latérale groupe et utilisateurs$")
-    public void jeCliqueSurLaRubriqueGroupeDeLaZoneLatéraleGroupeEtUtilisateurs() throws Throwable {
+    public void jeCliqueSurLaRubriqueGroupeDeLaZoneLatEraleGroupeEtUtilisateurs() throws Throwable {
         Thread.sleep(5000);
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
         base.Driver.findElement(By.xpath("//a[contains(@title,'Gestion des groupes')]")).click();
         Thread.sleep(2000);
-
+        return;
     }
 
     @And("^je clique sur l'icône ajouter un groupe$")
-    public void jeCliqueSurLIcôneAjouterUnGroupe() throws Throwable {
+    public void jeCliqueSurLIcOneAjouterUnGroupe() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-newgroup-button-button")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        return;
     }
 
     @And("^j'ai rempli la formulaire avec <Identifiant> et <Nom affiché>$")
-    public void jAiRempliLaFormulaireAvecIdentifiantEtNomAffiché() throws Throwable {
+    public void jAiRempliLaFormulaireAvecIdentifiantEtNomAffichE() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-shortname")).sendKeys("GR1");
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-displayname")).sendKeys("GR");
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-
-
+        return;
     }
 
     @Then("^la zone de texte du champ Nom affiché devient rouge$")
-    public void laZoneDeTexteDuChampNomAffichéDevientRouge() throws Throwable {
+    public void laZoneDeTexteDuChampNomAffichEDevientRouge() throws Throwable {
         String inputColor = base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-displayname")).getCssValue("background-color");
         if (inputColor.equals("#faecee")) {
             System.out.println("succès");
         } else {
             System.out.println("bug");
-
-
-
-
-        }}
+        }
+        return;
+    }
 
 
     @And("^un message d'erreur le champ contient une erreur s'affichera en survolant sur la zone de texte du champ nom affiché$")
-    public void unMessageDErreurLeChampContientUneErreurSAfficheraEnSurvolantSurLaZoneDeTexteDuChampNomAffiché() throws Throwable {
+    public void unMessageDErreurLeChampContientUneErreurSAfficheraEnSurvolantSurLaZoneDeTexteDuChampNomAffichE() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         WebElement element = base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-displayname"));
         String title = element.getAttribute("title");
@@ -73,18 +71,17 @@ public class groupe extends BaseUtil {
             System.out.println("bug");
         }
 
-
+        return;
     }
 
     @And("^j'ai saisi <Identifiant> et <Nom affiché>$")
-    public void jAiSaisiIdentifiantEtNomAffiché() throws Throwable {
+    public void jAiSaisiIdentifiantEtNomAffiche() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-shortname")).sendKeys("44");
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-displayname")).sendKeys("GR1");
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-
-
+        return;
     }
 
     @Then("^la zone de texte du champ identifiant devient rouge$")
@@ -94,12 +91,8 @@ public class groupe extends BaseUtil {
             System.out.println("succès");
         } else {
             System.out.println("bug");
-
-
-
-
         }
-
+        return;
     }
 
     @And("^un message d'erreur le champ contient une erreur s'affichera en survolant sur la zone de texte du champ identifiant$")
@@ -112,16 +105,17 @@ public class groupe extends BaseUtil {
         } else {
             System.out.println("bug");
         }
+        return;
     }
 
     @And("^j'ai saisi les champs <Identifiant> et <Nom affiché>$")
-    public void jAiSaisiLesChampsIdentifiantEtNomAffiché() throws Throwable {
+    public void jAiSaisiLesChampsIdentifiantEtNomAffiche() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-shortname")).sendKeys("44");
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-displayname")).sendKeys("GR");
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-
+        return;
     }
 
     @Then("^la zone de texte du champ identifiant et Nom deviennent rouge$")
@@ -138,8 +132,8 @@ public class groupe extends BaseUtil {
             System.out.println("succès");
         } else {
             System.out.println("bug");
-
         }
+        return;
     }
 
     @And("^un message d'erreur le champ contient une erreur s'affichera en survolant sur la zone de texte du champ identifiant et nom$")
@@ -167,29 +161,30 @@ public class groupe extends BaseUtil {
         } else {
             System.out.println("bug");
         }
+        return;
     }
 
     @And("^j'ai rempli<Identifiant> et <Nom affiché>$")
-    public void jAiRempliIdentifiantEtNomAffiché() throws Throwable {
+    public void jAiRempliIdentifiantEtNomAffiche() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-shortname")).sendKeys("gr1");
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-displayname")).sendKeys("GRP");
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-
+        return;
     }
 
 
     @And("^je clique sur le bouton Créer un groupe$")
-    public void jeCliqueSurLeBoutonCréerUnGroupe() throws Throwable {
+    public void jeCliqueSurLeBoutonCreerUnGroupe() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-creategroup-ok-button-button")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-
+        return;
     }
 
     @And("^un message d'erreur le groupe existe déja s'affichera$")
-    public void unMessageDErreurLeGroupeExisteDéjaSAffichera() throws Throwable {
+    public void unMessageDErreurLeGroupeExisteDejaSAffichera() throws Throwable {
         Thread.sleep(1000);
         String msg= base.Driver.findElement(By.xpath("//div[contains(text(),'Le groupe')]")).getText();
         Thread.sleep(2000);
@@ -202,28 +197,29 @@ public class groupe extends BaseUtil {
         {
             System.out.println("bug");
         }
-
+        return;
     }
 
     @And("^j'ai rempli les champs <Identifiant> et <Nom affiché>$")
-    public void jAiRempliLesChampsIdentifiantEtNomAffiché() throws Throwable {
+    public void jAiRempliLesChampsIdentifiantEtNomAffiche() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-shortname")).sendKeys("gr5");
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-displayname")).sendKeys("grp5");
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        return;
     }
 
     @Then("^le message Succès de la création du nouveau groupe$")
-    public void leMessageSuccèsDeLaCréationDuNouveauGroupe() throws Throwable {
+    public void leMessageSuccesDeLaCreationDuNouveauGroupe() throws Throwable {
         Thread.sleep(1000);
         base.Driver.findElement(By.xpath("//span[contains(text(),'Succès de la création du nouveau groupe.')]")).isDisplayed();
         Thread.sleep(2000);
-
+        return;
     }
 
     @And("^j'ai rempli le formulaire <Identifiant>, <Nom affiché>, <chef Hiérarchique> et <rôle>$")
-    public void jAiRempliLeFormulaireIdentifiantNomAffichéChefHiérarchiqueEtRôle() throws Throwable {
+    public void jAiRempliLeFormulaireIdentifiantNomAfficheChefHierarchiqueEtRole() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-shortname")).sendKeys("gr7");
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
@@ -246,13 +242,13 @@ public class groupe extends BaseUtil {
         bot.mouseMove(930, 420);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-
+        return;
 
     }
 
 
     @And("^je survole sur un groupe et je clique sur l'icône Modifier$")
-    public void jeSurvoleSurUnGroupeEtJeCliqueSurLIcôneModifier() throws Throwable {
+    public void jeSurvoleSurUnGroupeEtJeCliqueSurLIconeModifier() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//div[contains(text(),'gr1')]")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
@@ -261,12 +257,11 @@ public class groupe extends BaseUtil {
         bot.mouseMove(1140, 350);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-
-
+        return;
     }
 
     @And("^j'ai mofifié <Identifiant>, <Rôle> et <chef hiérarchique>$")
-    public void jAiMofifiéIdentifiantRôleEtChefHiérarchique() throws Throwable {
+    public void jAiMofifieIdentifiantRoleEtChefHierarchique() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-update-displayname")).clear();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
@@ -294,15 +289,15 @@ public class groupe extends BaseUtil {
         bot.mouseMove(930, 420);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-
+        return;
     }
 
     @Then("^le message Succès de la mise à jour s'affiche$")
-    public void leMessageSuccèsDeLaMiseÀJourSAffiche() throws Throwable {
+    public void leMessageSuccesDeLaMiseaJourSAffiche() throws Throwable {
         Thread.sleep(1000);
         base.Driver.findElement(By.xpath("//span[contains(text(),'Succès lors de la mise à jour')]")).isDisplayed();
         Thread.sleep(2000);
-
+        return;
     }
 
     @And("^j'ai saisi \"([^\"]*)\" dans la zone de texte$")
@@ -313,6 +308,7 @@ public class groupe extends BaseUtil {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-search-text")).sendKeys(arg1);
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        return;
     }
 
 
@@ -321,21 +317,24 @@ public class groupe extends BaseUtil {
         base.Driver.manage().timeouts().implicitlyWait(8,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-updategroup-save-button-button")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        return;
     }
 
     @And("^je clique sur l'icône Importer la liste de groupe$")
-    public void jeCliqueSurLIcôneImporterLaListeDeGroupe() throws Throwable {
+    public void jeCliqueSurLIconeImporterLaListeDeGroupe() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-importGroup-button-button")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        return;
     }
 
     @And("^je clique sur Sélect.fichiers du popup$")
-    public void jeCliqueSurSélectFichiersDuPopup() throws Throwable {
+    public void jeCliqueSurSelectFichiersDuPopup() throws Throwable {
 
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("fileID")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        return;
     }
 
     @And("^j'ai choisi un fichier du type json$")
@@ -372,7 +371,7 @@ public class groupe extends BaseUtil {
         bot2.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(5000);
 
-
+        return;
 
     }
 
@@ -384,22 +383,23 @@ public class groupe extends BaseUtil {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//button[contains(text(),'Confirmer')]")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        return;
     }
 
     @Then("^Succès de l'import du groupe$")
-    public void succèsDeLImportDuGroupe() throws Throwable {
+    public void succesDeLImportDuGroupe() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//span[contains(text(),'Succès de l'import du groupe')]")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-
+        return;
     }
 
     @And("^je clique sur l'icône Exporter les groupes$")
-    public void jeCliqueSurLIcôneExporterLesGroupes() throws Throwable {
+    public void jeCliqueSurLIconeExporterLesGroupes() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
       //  base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-exportGroup-button-button")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-
+        return;
     }
 }

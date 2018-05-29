@@ -27,27 +27,29 @@ public class AjoutUserSteps extends BaseUtil {
     @Given("^je connecte tant qu'un admin$")
     public void jeConnecteTantQuUnAdmin() throws Throwable {
         System.out.println("connexion réussie");
+        return;
     }
 
     @And("^je clique sur le lien voir tout$")
     public void jeCliqueSurLeLienVoirTout() throws Throwable {
         LinkPage page = new LinkPage(base.Driver);
         page.ClicklnkVoirtout();
+        return;
     }
 
     @And("^je clique sur l'icôneajouter utilisateur$")
-    public void jeCliqueSurLIcôneajouterUtilisateur() throws Throwable {
+    public void jeCliqueSurLIconeajouterUtilisateur() throws Throwable {
         Thread.sleep(5000);
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-newuser-button-button")).click();
         Thread.sleep(2000);
         base.Driver.switchTo().defaultContent();
-
+        return;
     }
 
 
     @And("^j'ai rempli les champs <Prénom>, <E-mail>, <Nom d'utilisateur>, <Mot de passe> et <Confirmer le nouveau mot de passe>$")
-    public void jAiRempliLesChampsPrénomEMailNomDUtilisateurMotDePasseEtConfirmerLeNouveauMotDePasse() throws Throwable {
+    public void jAiRempliLesChampsPrenomEMailNomDUtilisateurMotDePasseEtConfirmerLeNouveauMotDePasse() throws Throwable {
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname")).sendKeys("Saidani");
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-email")).sendKeys("SaiIsraa@gmail.com");
@@ -62,17 +64,18 @@ public class AjoutUserSteps extends BaseUtil {
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-password")).sendKeys("123");
         Thread.sleep(2000);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-verifypassword")).sendKeys("123");
-
+        return;
     }
 
     @And("^je clique sur le bouton Créer un utilisateur$")
-    public void jeCliqueSurLeBoutonCréerUnUtilisateur() throws Throwable {
+    public void jeCliqueSurLeBoutonCreerUnUtilisateur() throws Throwable {
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-createuser-ok-button-button")).click();
         Thread.sleep(3000);
+        return;
     }
 
     @Then("^le message Succès de la création d'un nouvel utilisateur s'affiche$")
-    public void leMessageSuccèsDeLaCréationDUnNouvelUtilisateurSAffiche() throws Throwable {
+    public void leMessageSuccesDeLaCreationDUnNouvelUtilisateurSAffiche() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
         String text = base.Driver.findElement(By.xpath("//span[contains(text(),'Succès de la création du nouvel utilisateur.')]")).getText();
         Thread.sleep(8000);
@@ -82,14 +85,14 @@ public class AjoutUserSteps extends BaseUtil {
         } else {
             System.out.println("Bug");
         }
-
+        return;
     }
 
     @And("^j'ai saisi le champ Prénom contenant des caractères spécifiques$")
-    public void jAiSaisiLeChampPrénomContenantDesCaractèresSpécifiques() throws Throwable {
+    public void jAiSaisiLeChampPrenomContenantDesCaracteresSpecifiques() throws Throwable {
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname")).sendKeys("zohra?");
-
+        return;
     }
 
     @Then("^la zone de texte devient rouge$")
@@ -101,7 +104,7 @@ public class AjoutUserSteps extends BaseUtil {
             System.out.println("bug");
 
         }
-
+        return;
     }
 
     @And("^le message <le champ contient une erreur s'affiche>$")
@@ -113,6 +116,7 @@ public class AjoutUserSteps extends BaseUtil {
         } else {
             System.out.println("bug");
         }
+        return;
     }
 
     @And("^j'ai rempli le champ <nom>$")
@@ -123,10 +127,11 @@ public class AjoutUserSteps extends BaseUtil {
         Thread.sleep(2000);
         Robot bot = new Robot();
         bot.mouseMove(1310, 550);
+        return;
     }
 
     @Then("^la zone de texte de prénom devient rouge$")
-    public void laZoneDeTexteDePrénomDevientRouge() throws Throwable {
+    public void laZoneDeTexteDePrenomDevientRouge() throws Throwable {
         String inputColor = base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname")).getCssValue("background-color");
         if (inputColor.equals("#faecee")) {
             System.out.println("succès");
@@ -134,12 +139,12 @@ public class AjoutUserSteps extends BaseUtil {
             System.out.println("bug");
 
         }
-
+        return;
 
     }
 
     @And("^le message <Une valeur doit être indiquée> s'affiche$")
-    public void leMessageUneValeurDoitÊtreIndiquéeSAffiche() throws Throwable {
+    public void leMessageUneValeurDoitEtreIndiqueeSAffiche() throws Throwable {
         WebElement element = base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname"));
         String title = element.getAttribute("title");
         if (title.equals("Une valeur doit être indiquée.")) {
@@ -147,6 +152,7 @@ public class AjoutUserSteps extends BaseUtil {
         } else {
             System.out.println("bug");
         }
+        return;
     }
 
     @And("^j'ai rempli les champs  <E-mail>, <Nom d'utilisateur>, <Mot de passe> et <Confirmer le nouveau mot de passe>$")
@@ -165,11 +171,11 @@ public class AjoutUserSteps extends BaseUtil {
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-password")).sendKeys("123");
         Thread.sleep(2000);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-verifypassword")).sendKeys("123");
-
+        return;
     }
 
     @And("^J'ai rempli <prénom>, <nom>, <E-mail>, <Nom d'utilisateur>, <Mot de passe> et <Confirmer le nouveau mot de passe>$")
-    public void jAiRempliPrénomNomEMailNomDUtilisateurMotDePasseEtConfirmerLeNouveauMotDePasse() throws Throwable {
+    public void jAiRempliPrenomNomEMailNomDUtilisateurMotDePasseEtConfirmerLeNouveauMotDePasse() throws Throwable {
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname")).sendKeys("Saidani");
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-lastname")).sendKeys(" Israa");
@@ -185,7 +191,7 @@ public class AjoutUserSteps extends BaseUtil {
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-password")).sendKeys("123");
         Thread.sleep(2000);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-verifypassword")).sendKeys("123");
-
+        return;
     }
 
     @Then("^la zone de texte du champ <Email> devient rouge$")
@@ -197,7 +203,7 @@ public class AjoutUserSteps extends BaseUtil {
             System.out.println("bug");
 
         }
-
+        return;
     }
 
     @And("^le message <le champ contient une erreur s'affiche> dans la zone de texte Email$")
@@ -209,12 +215,12 @@ public class AjoutUserSteps extends BaseUtil {
         } else {
             System.out.println("bug");
         }
-
+        return;
 
     }
 
     @And("^J'ai rempli <prénom>, <E-mail>, <Nom d'utilisateur>, <Mot de passe> et <Confirmer le nouveau mot de passe>$")
-    public void jAiRempliPrénomEMailNomDUtilisateurMotDePasseEtConfirmerLeNouveauMotDePasse() throws Throwable {
+    public void jAiRempliPrenomEMailNomDUtilisateurMotDePasseEtConfirmerLeNouveauMotDePasse() throws Throwable {
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname")).sendKeys("Saidani");
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-lastname")).sendKeys(" Israa");
@@ -230,7 +236,9 @@ public class AjoutUserSteps extends BaseUtil {
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-password")).sendKeys("123");
         Thread.sleep(2000);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-verifypassword")).sendKeys("123");
-}
+        return;
+    }
+
 
     @Then("^la zone de texte du champ <Nom d'utilisateur > devient rouge$")
     public void laZoneDeTexteDuChampNomDUtilisateurDevientRouge() throws Throwable {
@@ -241,12 +249,11 @@ public class AjoutUserSteps extends BaseUtil {
             System.out.println("bug");
 
         }
-
-
+        return;
     }
 
     @And("^le message <La valeur contient des caractères illégaux pour un nom> s'affiche$")
-    public void leMessageLaValeurContientDesCaractèresIllégauxPourUnNomSAffiche() throws Throwable {
+    public void leMessageLaValeurContientDesCaracteresIllegauxPourUnNomSAffiche() throws Throwable {
         WebElement element = base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-username"));
         String title = element.getAttribute("title");
         if (title.equals("La valeur contient des caractères illégaux pour un nom.")) {
@@ -254,15 +261,14 @@ public class AjoutUserSteps extends BaseUtil {
         } else {
             System.out.println("bug");
         }
-
-
+        return;
     }
 
 
 
 
     @And("^le message <La valeur inclut un nombre de caractères incorrect> s'affiche$")
-    public void leMessageLaValeurInclutUnNombreDeCaractèresIncorrectSAffiche() throws Throwable {
+    public void leMessageLaValeurInclutUnNombreDeCaracteresIncorrectSAffiche() throws Throwable {
         WebElement element = base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-username"));
         String title = element.getAttribute("title");
         if (title.equals("La valeur inclut un nombre de caractères incorrect.")) {
@@ -270,11 +276,11 @@ public class AjoutUserSteps extends BaseUtil {
         } else {
             System.out.println("bug");
         }
-
+        return;
 }
 
     @And("^J'ai rempli <prénom>, <E-mail>, <Nom d'utilisateur>, <Mot de passe> et <Confirmer le nouveau mot de passe> du formulaire$")
-    public void jAiRempliPrénomEMailNomDUtilisateurMotDePasseEtConfirmerLeNouveauMotDePasseDuFormulaire() throws Throwable {
+    public void jAiRempliPrenomEMailNomDUtilisateurMotDePasseEtConfirmerLeNouveauMotDePasseDuFormulaire() throws Throwable {
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname")).sendKeys("Saidani");
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-lastname")).sendKeys(" Israa");
@@ -290,11 +296,11 @@ public class AjoutUserSteps extends BaseUtil {
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-password")).sendKeys("123");
         Thread.sleep(2000);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-verifypassword")).sendKeys("123");
-
+        return;
     }
 
     @And("^j'ai saisi les champs <Prénom>, <E-mail>, <Nom d'utilisateur>, <Mot de passe> et <Confirmer le nouveau mot de passe>$")
-    public void jAiSaisiLesChampsPrénomEMailNomDUtilisateurMotDePasseEtConfirmerLeNouveauMotDePasse() throws Throwable {
+    public void jAiSaisiLesChampsPrenomEMailNomDUtilisateurMotDePasseEtConfirmerLeNouveauMotDePasse() throws Throwable {
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname")).sendKeys("Saidani");
        // base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-lastname")).sendKeys(" Israa");
@@ -310,7 +316,7 @@ public class AjoutUserSteps extends BaseUtil {
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-password")).sendKeys("12");
         Thread.sleep(2000);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-verifypassword")).sendKeys("12");
-
+        return;
     }
 
     @Then("^la zone de texte mot de passe devient rouge$")
@@ -323,11 +329,11 @@ public class AjoutUserSteps extends BaseUtil {
 
         }
 
-
+        return;
     }
 
     @And("^le messgae La valeur inclut un nombre de caractères incorrect s'affiche$")
-    public void leMessgaeLaValeurInclutUnNombreDeCaractèresIncorrectSAffiche() throws Throwable {
+    public void leMessgaeLaValeurInclutUnNombreDeCaracteresIncorrectSAffiche() throws Throwable {
         WebElement element = base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-password"));
         String title = element.getAttribute("title");
         if (title.equals("La valeur inclut un nombre de caractères incorrect.")) {
@@ -335,11 +341,11 @@ public class AjoutUserSteps extends BaseUtil {
         } else {
             System.out.println("bug");
         }
-
+        return;
     }
 
     @And("^J'ai rempli le formulaire <prénom>, <nom>, <E-mail>, <Nom d'utilisateur>, <Mot de passe> et <Confirmer le nouveau mot de passe>$")
-    public void jAiRempliLeFormulairePrénomNomEMailNomDUtilisateurMotDePasseEtConfirmerLeNouveauMotDePasse() throws Throwable {
+    public void jAiRempliLeFormulairePrenomNomEMailNomDUtilisateurMotDePasseEtConfirmerLeNouveauMotDePasse() throws Throwable {
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname")).sendKeys("12");
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-lastname")).sendKeys("12");
@@ -355,11 +361,12 @@ public class AjoutUserSteps extends BaseUtil {
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-password")).sendKeys("123");
         Thread.sleep(2000);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-verifypassword")).sendKeys("123");
+        return;
     }
 
 
     @Then("^la zone de texte du champ prénom et nom deviennent rouges$")
-    public void laZoneDeTexteDuChampPrénomEtNomDeviennentRouges() throws Throwable {
+    public void laZoneDeTexteDuChampPrenomEtNomDeviennentRouges() throws Throwable {
         String inputColor = base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname")).getCssValue("background-color");
         if (inputColor.equals("#faecee")) {
             System.out.println("succès");
@@ -374,10 +381,11 @@ public class AjoutUserSteps extends BaseUtil {
             System.out.println("bug");
 
         }
+        return;
     }
 
     @And("^le message <le champ contient une erreur> s'affiche dans la de texte prénom et nom$")
-    public void leMessageLeChampContientUneErreurSAfficheDansLaDeTextePrénomEtNom() throws Throwable {
+    public void leMessageLeChampContientUneErreurSAfficheDansLaDeTextePrenomEtNom() throws Throwable {
         WebElement element = base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname"));
         String title = element.getAttribute("title");
         if (title.equals("Le champ contient une erreur.")) {
@@ -392,7 +400,7 @@ public class AjoutUserSteps extends BaseUtil {
         } else {
             System.out.println("bug");
         }
-
+        return;
 
     }
 
@@ -433,17 +441,19 @@ public class AjoutUserSteps extends BaseUtil {
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-quota")).sendKeys("2");
         base.Driver.manage().timeouts().implicitlyWait(8,TimeUnit.SECONDS);
 
-
+        return;
 
     }
 
     @Then("^le message Un compte avec le même e-mail existe déjà s'affiche$")
-    public void leMessageUnCompteAvecLeMêmeEMailExisteDéjàSAffiche() throws Throwable {
+    public void leMessageUnCompteAvecLeMemeEMailExisteDejaSAffiche() throws Throwable {
         base.Driver.findElement(By.xpath("//div[contains(text(),'Un compte avec le même e-mail existe déjà.')]")).isDisplayed();
-    }
+        return;
+   }
+
 
     @And("^j'ai rempli le formulaire par <Prénom>, <E-mail>, <Nom d'utilisateur>, <Mot de passe> et <Confirmer le nouveau mot de passe>$")
-    public void jAiRempliLeFormulaireParPrénomEMailNomDUtilisateurMotDePasseEtConfirmerLeNouveauMotDePasse() throws Throwable {
+    public void jAiRempliLeFormulaireParPrenomEMailNomDUtilisateurMotDePasseEtConfirmerLeNouveauMotDePasse() throws Throwable {
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname")).sendKeys("Saidaniii");
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-email")).sendKeys("SaiIsraa@gmail.com");
@@ -458,6 +468,6 @@ public class AjoutUserSteps extends BaseUtil {
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-password")).sendKeys("123");
         Thread.sleep(2000);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-verifypassword")).sendKeys("123");
-
+        return;
     }
 }

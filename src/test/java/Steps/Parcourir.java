@@ -22,18 +22,18 @@ public class Parcourir extends BaseUtil {
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-browse-button-button")).click();
         base.Driver.manage().timeouts().implicitlyWait(8,TimeUnit.SECONDS);
 
-
+        return;
 
     }
 
     @And("^je clique sur l'iône Nouveau groupe$")
-    public void jeCliqueSurLIôneNouveauGroupe() throws Throwable {
+    public void jeCliqueSurLIoneNouveauGroupe() throws Throwable {
         Thread.sleep(1000);
         //base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//span[contains(@title,'Nouveau groupe')]")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-
+        return;
     }
 
     @And("^je clique sur le bouton Nouveau sous groupe$")
@@ -43,7 +43,7 @@ public class Parcourir extends BaseUtil {
         bot.mouseMove(853, 305);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-
+        return;
 
     }
 
@@ -56,20 +56,22 @@ public class Parcourir extends BaseUtil {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//span[contains(text(),'GroupeB (id2)')]")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        return;
     }
 
 
 
 
     @Then("^le message Succès de la création du nouveau groupe s'affiche$")
-    public void leMessageSuccèsDeLaCréationDuNouveauGroupeSAffiche() throws Throwable {
+    public void leMessageSuccesDeLaCreationDuNouveauGroupeSAffiche() throws Throwable {
         Thread.sleep(1000);
         base.Driver.findElement(By.xpath("//span[contains(text(),'Succès de la création du nouveau groupe.')]")).isDisplayed();
         Thread.sleep(2000);
+        return;
     }
 
     @And("^les champs <Identifiant>, <Nom affiché> et <chef hiérarchique> sont remplis$")
-    public void lesChampsIdentifiantNomAffichéEtChefHiérarchiqueSontRemplis() throws Throwable {
+    public void lesChampsIdentifiantNomAfficheEtChefHierarchiqueSontRemplis() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-shortname")).sendKeys("id444");
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
@@ -90,13 +92,15 @@ public class Parcourir extends BaseUtil {
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(3000);
+        return;
     }
 
     @And("^je clique bouton Créer un groupe$")
-    public void jeCliqueBoutonCréerUnGroupe() throws Throwable {
+    public void jeCliqueBoutonCreerUnGroupe() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-creategroup-ok-button-button")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        return;
     }
 
 
@@ -107,6 +111,7 @@ public class Parcourir extends BaseUtil {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//span[contains(text(),'groupebb (id21)')]")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        return;
     }
 
     @And("^je clique sur Nouveau sous groupe$")
@@ -116,16 +121,18 @@ public class Parcourir extends BaseUtil {
         bot.mouseMove(1200, 305);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        return;
 
     }
 
     @And("^je clique sur 'icône Ajouter un utilisateur$")
-    public void jeCliqueSurIcôneAjouterUnUtilisateur() throws Throwable {
+    public void jeCliqueSurIconeAjouterUnUtilisateur() throws Throwable {
         Thread.sleep(3000);
         Robot bot = new Robot();
         bot.mouseMove(880, 305);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        return;
     }
 
     @And("^j'ai choisi un utilisateur$")
@@ -143,13 +150,13 @@ public class Parcourir extends BaseUtil {
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         //Thread.sleep(1000);
-
+        return;
     }
 
 
     @Then("^le message Succès de l'ajout de l'utilisateur$")
-    public void leMessageSuccèsDeLAjoutDeLUtilisateur() throws Throwable {
-
+    public void leMessageSuccesDeLAjoutDeLUtilisateur() throws Throwable {
+        return;
 
     }
 
@@ -161,12 +168,13 @@ public class Parcourir extends BaseUtil {
     }
 
     @And("^je clique sur l'icône Enlever l'utilisateur$")
-    public void jeCliqueSurLIcôneEnleverLUtilisateur() throws Throwable {
+    public void jeCliqueSurLIconeEnleverLUtilisateur() throws Throwable {
         Thread.sleep(3000);
         Robot bot = new Robot();
         bot.mouseMove(880, 380);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        return;
     }
 
     @And("^je confirme la suppression$")
@@ -174,17 +182,17 @@ public class Parcourir extends BaseUtil {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//button[contains(text(),'Oui')]")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-
-
+        return;
     }
 
     @Then("^le message Succès de la suppression de l'utilisateur$")
-    public void leMessageSuccèsDeLaSuppressionDeLUtilisateur() throws Throwable {
+    public void leMessageSuccesDeLaSuppressionDeLUtilisateur() throws Throwable {
          //à voir
+        return;
     }
 
     @And("^je clique sur un groupe and je clique sur l'icône Exporter le groupe$")
-    public void jeCliqueSurUnGroupeAndJeCliqueSurLIcôneExporterLeGroupe() throws Throwable {
+    public void jeCliqueSurUnGroupeAndJeCliqueSurLIconeExporterLeGroupe() throws Throwable {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//span[contains(text(),'GroupeB (id2)')]")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
@@ -193,15 +201,15 @@ public class Parcourir extends BaseUtil {
         bot.mouseMove(550, 350);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-
+        return;
 
     }
 
     @Then("^le message Export terminé avec succès$")
-    public void leMessageExportTerminéAvecSuccès() throws Throwable {
+    public void leMessageExportTermineAvecSucces() throws Throwable {
         Thread.sleep(1000);
         base.Driver.findElement(By.xpath("//span[contains(text(),'Export terminé avec succés')]")).isDisplayed();
        Thread.sleep(2000);
-
+        return;
     }
 }
