@@ -1,3 +1,4 @@
+@Parcourir
 Feature: Parcourir
   Background:
   Background:
@@ -54,12 +55,7 @@ Feature: Parcourir
      And je clique sur le bouton Créer un groupe
      Then le message Succès de la création du nouveau groupe
 
-  Scenario: Ajouter un sous sous groupe
-    And je clique sur un sous groupe
-    And je clique sur Nouveau sous groupe
-    And les champs <Identifiant>, <Nom affiché> et <chef hiérarchique> sont remplis
-    And je clique sur le bouton Créer un groupe
-    Then le message Succès de la création du nouveau groupe
+
 
   Scenario: Affecter un utilisateur à un groupe
     And je clique sur un groupe

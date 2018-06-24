@@ -22,8 +22,8 @@ public class ImportStep extends BaseUtil {
     public void jeCliqueSurLaRubriqueImportDeLaZoneLateraleOutils() throws Throwable {
         Thread.sleep(5000);
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
-       // base.Driver.findElement(By.xpath("//[contains(@title,'Import')]")).click();
-        base.Driver.findElement(By.xpath("//*[@id=\"toolLink\"]/li[2]/span/a")).click();
+        base.Driver.findElement(By.xpath("//a[contains(@title,'Import')]")).click();
+       // base.Driver.findElement(By.xpath("//*[@id=\"toolLink\"]/li[2]/span/a")).click();
         base.Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         //Thread.sleep(4000);
         return;
@@ -32,6 +32,7 @@ public class ImportStep extends BaseUtil {
 
     @And("^j'ai choisi espace de destination cours par exemple$")
     public void jAiChoisiEspaceDeDestinationCoursParExemple() throws Throwable {
+        Thread.sleep(3000);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-selectDestination-button-button")).click();
         Thread.sleep(4000);
         Robot bot = new Robot();
@@ -71,15 +72,15 @@ public class ImportStep extends BaseUtil {
 
         Thread.sleep(3000);
         Robot bot = new Robot();
-        bot.mouseMove(200, 240);
+        bot.mouseMove(200, 220);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(5000);
 
 
-       Thread.sleep(5000);
+        Thread.sleep(5000);
         Robot bot1 = new Robot();
-        bot1.mouseMove(514, 440);
+        bot1.mouseMove(1200, 700);
         bot1.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot1.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(6000);
@@ -136,14 +137,14 @@ public class ImportStep extends BaseUtil {
     public void jAiChoisiUnFichierDuTypeZip() throws Throwable {
         Thread.sleep(3000);
         Robot bot = new Robot();
-        bot.mouseMove(200, 280);
+        bot.mouseMove(200, 260);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(5000);
 
         Thread.sleep(5000);
         Robot bot1 = new Robot();
-        bot1.mouseMove(514, 440);
+        bot1.mouseMove(1200, 700);
         bot1.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot1.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(6000);
@@ -175,24 +176,4 @@ public class ImportStep extends BaseUtil {
 
     }
 
-    @And("^j'ai saisi un mot de recherche$")
-    public void jAiSaisiUnMotDeRecherche() throws Throwable {
-
-        return;
-    }
-
-    @And("^je survole sur un utilsateur et je clique sur l'icône Supprimer$")
-    public void jeSurvoleSurUnUtilsateurEtJeCliqueSurLIconeSupprimer() throws Throwable {
-        return;
-    }
-
-    @And("^je confirme la suppression de l'utilsateur$")
-    public void jeConfirmeLaSuppressionDeLUtilsateur() throws Throwable {
-        return;
-    }
-
-    @Then("^le message Succes de la suppressin de l'utilisateur$")
-    public void leMessageSuccesDeLaSuppressinDeLUtilisateur() throws Throwable {
-        return;
-    }
 }

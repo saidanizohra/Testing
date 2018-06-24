@@ -156,13 +156,16 @@ public class Parcourir extends BaseUtil {
 
     @Then("^le message Succès de l'ajout de l'utilisateur$")
     public void leMessageSuccesDeLAjoutDeLUtilisateur() throws Throwable {
+        Thread.sleep(1000);
+        base.Driver.findElement(By.xpath("//span[contains(text(),'Succès de l'ajout de l'utilisateur')]")).isDisplayed();
+        Thread.sleep(2000);
         return;
 
     }
 
     @And("^je survole sur un utiliseur$")
     public void jeSurvoleSurUnUtiliseur() throws Throwable {
-        base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        base.Driver.manage().timeouts().implicitlyWait(8,TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//span[contains(text(),'(zohra)')]")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
     }
@@ -171,7 +174,7 @@ public class Parcourir extends BaseUtil {
     public void jeCliqueSurLIconeEnleverLUtilisateur() throws Throwable {
         Thread.sleep(3000);
         Robot bot = new Robot();
-        bot.mouseMove(880, 380);
+        bot.mouseMove(880, 420);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         return;
@@ -187,7 +190,9 @@ public class Parcourir extends BaseUtil {
 
     @Then("^le message Succès de la suppression de l'utilisateur$")
     public void leMessageSuccesDeLaSuppressionDeLUtilisateur() throws Throwable {
-         //à voir
+        Thread.sleep(1000);
+        base.Driver.findElement(By.xpath("//span[contains(text(),'Succès de la suppression de l'utilisateur')]")).isDisplayed();
+        Thread.sleep(2000);
         return;
     }
 

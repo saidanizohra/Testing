@@ -1,4 +1,5 @@
-Feature: Gestionnaire de tags
+@Proprietes
+Feature: Propriétés affichées et exportées
   Background:
     Given je connecte tant qu'un admin
     And je clique sur le lien voir tout

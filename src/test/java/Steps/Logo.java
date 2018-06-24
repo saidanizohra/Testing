@@ -41,26 +41,25 @@ public class Logo extends BaseUtil {
 
         Thread.sleep(3000);
         Robot bot = new Robot();
-        bot.mouseMove(420, 420);
+        bot.mouseMove(200, 260);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(5000);
 
-
         Thread.sleep(5000);
         Robot bot1 = new Robot();
-        bot1.mouseMove(614, 610);
+        bot1.mouseMove(1200, 700);
         bot1.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot1.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        Thread.sleep(8000);
+        Thread.sleep(6000);
         return;
     }
 
 
     @Then("^le message Échec : error occured during upload of new content  s'affiche dans le popup$")
     public void leMessageEchecErrorOccuredDuringUploadOfNewContentSAfficheDansLePopup() throws Throwable {
-        base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-        base.Driver.findElement(By.xpath("//span[contains(text(),'652 Ko (Échec : error occured during upload of new content.)')]")).isDisplayed();
+        base.Driver.manage().timeouts().implicitlyWait(8,TimeUnit.SECONDS);
+        base.Driver.findElement(By.xpath("//span[contains(text(),'8 Mo (Échec : error occured during upload of new content.)')]")).isDisplayed();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("template_x002e_dnd-upload_x002e_console_x0023_default-cancelOk-button-button")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
@@ -73,32 +72,26 @@ public class Logo extends BaseUtil {
         base.Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//input[contains(@class,'dnd-file-selection-button')]")).click();
         base.Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-
         Thread.sleep(3000);
         Robot bot = new Robot();
-        bot.mouseMove(600, 320);
+        bot.mouseMove(200, 360);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(5000);
-        Thread.sleep(3000);
+
+        Thread.sleep(5000);
         Robot bot1 = new Robot();
-        bot1.mouseMove(300, 320);
+        bot1.mouseMove(1200, 700);
         bot1.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot1.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        Thread.sleep(5000);
-
-        Thread.sleep(3000);
-        Robot bot2 = new Robot();
-        bot2.mouseMove(500, 450);
-        bot2.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        bot2.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        Thread.sleep(8000);
+        Thread.sleep(6000);
         return;
     }
 
     @And("^je clique sur le bouton Appliquer$")
     public void jeCliqueSurLeBoutonAppliquer() throws Throwable {
-        base.Driver.manage().timeouts().implicitlyWait(12,TimeUnit.SECONDS);
+        //base.Driver.manage().timeouts().implicitlyWait(12,TimeUnit.SECONDS);
+        Thread.sleep(6000);
         base.Driver.findElement(By.xpath("//button[contains(text(),'Appliquer')]")).click();
         base.Driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
         base.Driver.switchTo().defaultContent();

@@ -30,11 +30,16 @@ public class GestionnaireCategorie extends BaseUtil {
     @And("^je clique sur l'icône Ajouter une catégorie en survolant sur Catégorie racine$")
     public void jeCliqueSurLIconeAjouterUneCategorieEnSurvolantSurCategorieRacine() throws Throwable {
         base.Driver.findElement(By.id("ygtvlabelel1")).click();
-        base.Driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        base.Driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
       //  WebDriverWait wait = new WebDriverWait(base.Driver,30);
         //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@id=\"ygtvlabelel1\"]/span")));   //examining the xpath for a search
-        base.Driver.findElement(By.xpath("//*[@id=\"ygtvlabelel1\"]/span")).click();
-        base.Driver.manage().timeouts().implicitlyWait(12, TimeUnit.SECONDS);
+        //base.Driver.findElement(By.xpath("//*[@id=\"ygtvlabelel1\"]/span")).click();
+       // base.Driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        Thread.sleep(3000);
+        Robot bot = new Robot();
+        bot.mouseMove(390, 270);
+        bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         return;
     }
 
@@ -132,10 +137,9 @@ public class GestionnaireCategorie extends BaseUtil {
        // base.Driver.findElement(By.xpath("//*[@id=\"ygtvlabelel3\"]/span[2]")).click();
         Thread.sleep(3000);
         Robot bot = new Robot();
-        bot.mouseMove(350, 390);
+        bot.mouseMove(350, 380);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-
         base.Driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
         return;
 
@@ -191,7 +195,7 @@ public class GestionnaireCategorie extends BaseUtil {
         // base.Driver.findElement(By.xpath("//*[@id=\"ygtvlabelel3\"]/span[2]")).click();
         Thread.sleep(3000);
         Robot bot = new Robot();
-        bot.mouseMove(370, 370);
+        bot.mouseMove(370, 360);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 

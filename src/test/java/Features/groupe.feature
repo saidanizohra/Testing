@@ -1,5 +1,5 @@
+@groupe
 Feature: groupe
-
   Background:
     Given je connecte tant qu'un admin
     And je clique sur le lien voir tout

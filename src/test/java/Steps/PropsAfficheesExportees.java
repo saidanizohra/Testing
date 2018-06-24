@@ -35,7 +35,7 @@ public class PropsAfficheesExportees extends BaseUtil {
         base.Driver.findElement(By.id("global_x002e_header_x0023_default-searchText")).sendKeys("test.csv");
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("global_x002e_header_x0023_default-searchText")).sendKeys(Keys.ENTER);
-        base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        base.Driver.manage().timeouts().implicitlyWait(8,TimeUnit.SECONDS);
         return;
     }
 
@@ -61,6 +61,7 @@ public class PropsAfficheesExportees extends BaseUtil {
 
     @Then("^les propriétés sélectionnées s'affichent$")
     public void lesProprietesSelectionneesSAffichent() throws Throwable {
+        base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//a[contains(text(),'Nom')]")).isDisplayed();
         base.Driver.findElement(By.xpath("//a[contains(text(),'Titre')]")).isDisplayed();
         return;
@@ -73,7 +74,7 @@ public class PropsAfficheesExportees extends BaseUtil {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         Thread.sleep(3000);
         Robot bot = new Robot();
-        bot.mouseMove(1270, 510);
+        bot.mouseMove(1270, 520);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(5000);

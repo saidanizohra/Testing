@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 
 
 //@RunWith(Cucumber.class)
-@CucumberOptions(features = {"src/test/java/features"}, format = {"json:target/cucumber.json"}, glue = "Steps")
+@CucumberOptions(features = {"src/test/java/features"}, format = {"json:target/cucumber.html"}, glue = "Steps")
 public class TestRunner extends AbstractTestNGCucumberTests {
 
 

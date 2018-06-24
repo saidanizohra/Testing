@@ -38,7 +38,7 @@ public class ImportUser extends BaseUtil {
     public void jAiChoisiUnFichier() throws Throwable {
         Thread.sleep(3000);
         Robot bot = new Robot();
-        bot.mouseMove(200, 200);
+        bot.mouseMove(185, 185);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
@@ -63,7 +63,7 @@ public class ImportUser extends BaseUtil {
 
         Thread.sleep(3000);
         Robot bot2= new Robot();
-        bot2.mouseMove(500, 450);
+        bot2.mouseMove(1200, 700);
         bot2.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot2.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(5000);
@@ -92,17 +92,18 @@ public class ImportUser extends BaseUtil {
     public void jAiChoisiUnFichierDeTypeHorsJson() throws Throwable {
         Thread.sleep(3000);
         Robot bot = new Robot();
-        bot.mouseMove(200, 280);
+        bot.mouseMove(210, 130);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(5000);
 
+        Thread.sleep(3000);
+        Robot bot2= new Robot();
+        bot2.mouseMove(1200, 700);
+        bot2.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        bot2.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(5000);
-        Robot bot1 = new Robot();
-        bot1.mouseMove(514, 440);
-        bot1.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        bot1.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        Thread.sleep(6000);
+
         return;
     }
 
@@ -135,35 +136,18 @@ public class ImportUser extends BaseUtil {
     public void jAiChoisiUnFichierDeTypeCsv() throws Throwable {
         Thread.sleep(3000);
         Robot bot = new Robot();
-        bot.mouseMove(200, 200);
+        bot.mouseMove(210, 130);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        Thread.sleep(5000);
-
-        Thread.sleep(3000);
-        Robot bot1 = new Robot();
-        bot1.mouseMove(200, 200);
-        bot1.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        bot1.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        bot1.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        bot1.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        Thread.sleep(5000);
-
-        Thread.sleep(3000);
-        Robot bot3 = new Robot();
-        bot3.mouseMove(200, 140);
-        bot3.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-        bot1.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(5000);
 
         Thread.sleep(3000);
         Robot bot2= new Robot();
-        bot2.mouseMove(500, 450);
+        bot2.mouseMove(1200, 700);
         bot2.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot2.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(5000);
+
         return;
     }
 

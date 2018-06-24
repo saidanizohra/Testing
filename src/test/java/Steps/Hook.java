@@ -31,9 +31,6 @@ public class Hook extends BaseUtil {
         base.Driver.findElement(By.name("username")).sendKeys("admin");
         base.Driver.findElement(By.name("password")).sendKeys("admin");
         base.Driver.findElement(By.id("page_x002e_components_x002e_slingshot-login_x0023_default-submit-button")).click();
-
-
-
     }
 
     @After

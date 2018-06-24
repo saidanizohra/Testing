@@ -8,3 +8,5 @@
 [0511/183507.701:ERROR:crash_report_database_win.cc(568)] CreateDirectory C:\Users\Zohra\AppData\Local\Temp\scoped_dir11516_14328\Crashpad: Espace insuffisant sur le disque. (0x70)
 [0511/183507.732:ERROR:registration_protocol_win.cc(84)] TransactNamedPipe: Le canal de communication a été fermé. (0x6D)
 [0511/183507.732:ERROR:crash_report_database_win.cc(568)] CreateDirectory C:\Users\Zohra\AppData\Local\Temp\scoped_dir11516_14328\Crashpad: Espace insuffisant sur le disque. (0x70)
+[0529/134332.913:ERROR:crash_report_database_win.cc(568)] CreateDirectory C:\Users\Zohra\AppData\Local\Temp\scoped_dir1680_16259\Crashpad: Le chemin d’accès spécifié est introuvable. (0x3)
+[0624/000403.214:ERROR:exception_handler_server.cc(526)] ConnectNamedPipe: Le canal de communication est sur le point d’être fermé. (0xE8)

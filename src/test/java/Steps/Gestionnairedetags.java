@@ -30,7 +30,10 @@ public class Gestionnairedetags extends BaseUtil {
 
     @And("^je clique sur le bouton Ok du popup$")
     public void jeCliqueSurLeBoutonOkDuPopup() throws Throwable {
-        return;
+        base.Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-edit-tag-ok-button")).click();
+        base.Driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    return;
     }
 
 

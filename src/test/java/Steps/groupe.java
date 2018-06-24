@@ -229,12 +229,12 @@ public class groupe extends BaseUtil {
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//a[text()='Visiteur']")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
-        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-update-select-manager-button-button")).click();
+        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-select-manager-button-button")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-manager-finder-search-text")).sendKeys("wiem");
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-manager-finder-search-button-button")).click();
-        base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        base.Driver.manage().timeouts().implicitlyWait(8,TimeUnit.SECONDS);
         base.Driver.findElement(By.xpath("//h3[contains(text(),'wiem kouki ')]")).click();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         Thread.sleep(3000);
@@ -262,7 +262,7 @@ public class groupe extends BaseUtil {
 
     @And("^j'ai mofifié <Identifiant>, <Rôle> et <chef hiérarchique>$")
     public void jAiMofifieIdentifiantRoleEtChefHierarchique() throws Throwable {
-        base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
+        base.Driver.manage().timeouts().implicitlyWait(8,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-update-displayname")).clear();
         base.Driver.manage().timeouts().implicitlyWait(5,TimeUnit.SECONDS);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-update-displayname")).sendKeys("grpp7");
@@ -341,7 +341,7 @@ public class groupe extends BaseUtil {
     public void jAiChoisiUnFichierDuTypeJson() throws Throwable {
         Thread.sleep(3000);
         Robot bot = new Robot();
-        bot.mouseMove(200, 200);
+        bot.mouseMove(185, 185);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
@@ -366,7 +366,7 @@ public class groupe extends BaseUtil {
 
         Thread.sleep(3000);
         Robot bot2= new Robot();
-        bot2.mouseMove(500, 450);
+        bot2.mouseMove(1200, 700);
         bot2.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot2.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
         Thread.sleep(5000);

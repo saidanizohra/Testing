@@ -1,4 +1,5 @@
-Feature: Ajouter utilisateur
+@ImportUser
+Feature: ImportUser
   Background:
     Given je connecte tant qu'un admin
     And je clique sur le lien voir tout
@@ -32,12 +33,7 @@ Feature: Ajouter utilisateur
     And le popup Export en cours s'affiche
     Then le message Succes de l'export s'affiche
 
-  Scenario: Supprimer un utilisateur
-    And j'ai saisi un mot de recherche
-    And je clique sur le bouton Rechercher
-    And je survole sur un utilsateur et je clique sur l'icône Supprimer
-    And je confirme la suppression de l'utilsateur
-    Then le message Succes de la suppressin de l'utilisateur
+
 
 
 

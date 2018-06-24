@@ -1,3 +1,4 @@
+@User
 Feature: Ajouter utilisateur
   Background:
     Given je connecte tant qu'un admin

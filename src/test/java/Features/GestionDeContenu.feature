@@ -1,4 +1,5 @@
-Feature: Gestionnaire de tags
+@Contenu
+Feature: Gestionnaire de contenu
   Background:
     Given je connecte tant qu'un admin
     And je clique sur le lien voir tout

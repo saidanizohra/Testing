@@ -11,11 +11,14 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+
+import org.testng.annotations.Test;
 import pages.LinkPage;
 
 import java.awt.*;
 import java.awt.event.InputEvent;
 import java.util.concurrent.TimeUnit;
+
 
 public class AjoutUserSteps extends BaseUtil {
     private BaseUtil base;
@@ -51,15 +54,15 @@ public class AjoutUserSteps extends BaseUtil {
     @And("^j'ai rempli les champs <Prénom>, <E-mail>, <Nom d'utilisateur>, <Mot de passe> et <Confirmer le nouveau mot de passe>$")
     public void jAiRempliLesChampsPrenomEMailNomDUtilisateurMotDePasseEtConfirmerLeNouveauMotDePasse() throws Throwable {
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
-        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname")).sendKeys("Saidani");
-        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-email")).sendKeys("SaiIsraa@gmail.com");
+        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname")).sendKeys("BenSta");
+        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-email")).sendKeys("Benstamhd@gmail.com");
         Thread.sleep(2000);
         Thread.sleep(2000);
         Robot bot = new Robot();
         bot.mouseMove(1310, 550);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-username")).sendKeys("Israa");
+        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-username")).sendKeys("mhd");
         Thread.sleep(3000);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-password")).sendKeys("123");
         Thread.sleep(2000);
@@ -356,7 +359,7 @@ public class AjoutUserSteps extends BaseUtil {
         bot.mouseMove(1310, 550);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-username")).sendKeys("isr");
+        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-username")).sendKeys("isaaar");
         Thread.sleep(3000);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-password")).sendKeys("123");
         Thread.sleep(2000);
@@ -407,16 +410,16 @@ public class AjoutUserSteps extends BaseUtil {
     @And("^j'ai rempli formulaire$")
     public void jAiRempliFormulaire() throws Throwable {
         base.Driver.switchTo().frame(base.Driver.findElement(By.xpath("//iframe[contains(@src,'/share/page/console/admin-console/users')]")));
-        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname")).sendKeys("benahmed");
-        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-lastname")).sendKeys("Yosra");
-        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-email")).sendKeys("yosyos@gmail.com");
+        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-firstname")).sendKeys("rifi");
+        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-lastname")).sendKeys("ines");
+        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-email")).sendKeys("rifiines@gmail.com");
         Thread.sleep(2000);
         Thread.sleep(2000);
         Robot bot = new Robot();
         bot.mouseMove(1310, 550);
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-username")).sendKeys("yosra");
+        base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-username")).sendKeys("ines");
         Thread.sleep(3000);
         base.Driver.findElement(By.id("page_x002e_ctool_x002e_admin-console_x0023_default-create-password")).sendKeys("123");
         Thread.sleep(2000);

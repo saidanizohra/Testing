@@ -83,6 +83,8 @@ public class ExportSteps extends BaseUtil {
 
     @And("^je consulte l'espace bibliothèque de documents$")
     public void jeConsulteLEspaceBibliothequeDeDocuments() throws Throwable {
+
+        Thread.sleep(5000);
         base.Driver.navigate().to("http://127.0.0.1:8080/share/page/site/averroes/documentlibrary");
         return;
     }
